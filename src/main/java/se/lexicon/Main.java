@@ -1,5 +1,8 @@
 package se.lexicon;
 
+import com.sun.source.util.SourcePositions;
+
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -11,7 +14,8 @@ public class Main {
         //1
         int[] numbers = {11,23,39};
         System.out.println(Arrays.toString(numbers) + "\n");
-
+        
+        //3
         sortingCities();
 
         //4
@@ -21,6 +25,7 @@ public class Main {
 
         //5
         String[][] countryCity = new String[4][2];
+
         countryCity[0][0] = "Sweden";
         countryCity[0][1] = "Malmö";
         countryCity[1][0] = "Denmark";
@@ -31,12 +36,25 @@ public class Main {
         countryCity[3][1] = "Sydney";
 
         System.out.println(Arrays.deepToString(countryCity) + "\n");
+
         System.out.println(Arrays.deepToString(countryCity).replace("], [", "],\n [") + "\n");
 
-        Iterator<String[]> itrC = Arrays.asList(countryCity).iterator();
-        while (itrC.hasNext()) {
-            System.out.println(Arrays.asList(itrC.next()));
+        printMultiDimensionArray(countryCity);
+        // Before
+        /*
+        Iterator<String[]> iteratorCountyCity = Arrays.asList(countryCity).iterator();
+        while (iteratorCountyCity.hasNext()) {
+            System.out.println(Arrays.asList(iteratorCountyCity.next()));
         }
+         */
+
+        /*
+        System.out.println("for loop");
+        for (String[] o : countryCity) {
+            System.out.println(Arrays.asList(countryCity));
+        }
+        */
+        
 
         /*
         for (String[] strings : Arrays.asList(countryCity)) {
@@ -46,12 +64,38 @@ public class Main {
         //System.out.println(Arrays.asList(countryCity));
 
 
+        System.out.println(" ");
+        String[][] colorsArray = new String[4][3];
+        colorsArray[0][0] = "DeepPink";
+        colorsArray[0][1] = "#FF1493";
+        colorsArray[0][2] = "rgb(255, 20, 147)";
+        colorsArray[1][0] = "DarkSlateBlue";
+        colorsArray[1][1] = "#483D8B";
+        colorsArray[1][2] = "rgb(72, 61, 139)";
+        colorsArray[2][0] = "MediumSpringGreen";
+        colorsArray[2][1] = "#00FA9A";
+        colorsArray[2][2] = "rgb(0, 250, 154)";
+        colorsArray[3][0] = "Azure";
+        colorsArray[3][1] = "#F0FFFF";
+        colorsArray[3][2] = "rgb(240, 255, 255)";
+        printMultiDimensionArray(colorsArray);
 
 
 
 
 
 
+
+
+
+
+    }
+
+    private static void printMultiDimensionArray(String[][] countryCity) {
+        Iterator<String[]> iteratorCountyCity = Arrays.asList(countryCity).iterator();
+        while (iteratorCountyCity.hasNext()) {
+            System.out.println(Arrays.asList(iteratorCountyCity.next()));
+        }
     }
 
     private static void sortingCities() {
