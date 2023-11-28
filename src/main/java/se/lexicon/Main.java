@@ -2,7 +2,7 @@ package se.lexicon;
 
 import com.sun.source.util.SourcePositions;
 
-import java.sql.SQLOutput;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -80,6 +80,21 @@ public class Main {
         colorsArray[3][2] = "rgb(240, 255, 255)";
         printMultiDimensionArray(colorsArray);
 
+        System.out.println(" ");
+        int[][] twoDimNumbers = new int[2][2];
+        twoDimNumbers[0][0] = 22;
+        twoDimNumbers[0][1] = 23;
+        twoDimNumbers[1][0] = 24;
+        twoDimNumbers[1][1] = 25;
+        printMultiDimensionArray(twoDimNumbers);
+
+        System.out.println("Lambda");
+        Arrays.stream(numbers).forEach(System.out::print);
+        System.out.println(" ");
+        String[] stringArray = {"Paris","London","New York","Stockholm"};
+        Arrays.stream(stringArray).forEach(System.out::println);
+
+
 
 
 
@@ -95,6 +110,13 @@ public class Main {
         Iterator<String[]> iteratorCountyCity = Arrays.asList(countryCity).iterator();
         while (iteratorCountyCity.hasNext()) {
             System.out.println(Arrays.asList(iteratorCountyCity.next()));
+        }
+    }
+
+    private static void printMultiDimensionArray(int[][] countryCity) {
+        Iterator<int[]> iteratorCountyCity = Arrays.asList(countryCity).iterator();
+        while (iteratorCountyCity.hasNext()) {
+            System.out.println(Arrays.toString(iteratorCountyCity.next()));
         }
     }
 
