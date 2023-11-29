@@ -94,6 +94,14 @@ public class Main {
         String[] stringArray = {"Paris","London","New York","Stockholm"};
         Arrays.stream(stringArray).forEach(System.out::println);
 
+        //6
+        double[] bunchOfNumbers = {43,5,23,17,2,14};
+        double avg = getAverage(bunchOfNumbers);
+        System.out.println("Average is: " + avg);
+
+        double[] testNumbers = {100,1000,10000};
+        double testAvg = getAverage(testNumbers);
+        System.out.println(testAvg);
 
 
 
@@ -104,6 +112,18 @@ public class Main {
 
 
 
+
+
+    }
+
+    private static double getAverage(double[] bunchOfNumbers) {
+        double j = 0;
+        double avg = 0;
+        for (double i : bunchOfNumbers) {
+            j = j + i;
+            }
+        avg = j / bunchOfNumbers.length;
+        return avg;
     }
 
     private static void printMultiDimensionArray(String[][] countryCity) {
