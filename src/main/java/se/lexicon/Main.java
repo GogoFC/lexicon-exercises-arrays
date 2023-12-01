@@ -103,6 +103,12 @@ public class Main {
         double testAvg = getAverage(testNumbers);
         System.out.println(testAvg);
 
+        //7
+        int[] oddAndEvenNumbers = {1,2,4,7,9,12};
+        for (int i : oddAndEvenNumbers) {
+            System.out.println(Arrays.toString(i));
+        }
+
 
 
 
