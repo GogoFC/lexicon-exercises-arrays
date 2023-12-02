@@ -1,9 +1,5 @@
 package se.lexicon;
 
-import com.sun.source.util.SourcePositions;
-
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
@@ -87,27 +83,62 @@ public class Main {
         twoDimNumbers[1][0] = 24;
         twoDimNumbers[1][1] = 25;
         printMultiDimensionArray(twoDimNumbers);
+        System.out.println(" ");
 
         System.out.println("Lambda");
         Arrays.stream(numbers).forEach(System.out::print);
         System.out.println(" ");
+        System.out.println(" ");
         String[] stringArray = {"Paris","London","New York","Stockholm"};
         Arrays.stream(stringArray).forEach(System.out::println);
+        System.out.println(" ");
+
 
         //6
         double[] bunchOfNumbers = {43,5,23,17,2,14};
         double avg = getAverage(bunchOfNumbers);
         System.out.println("Average is: " + avg);
+        System.out.println(" ");
 
         double[] testNumbers = {100,1000,10000};
         double testAvg = getAverage(testNumbers);
-        System.out.println(testAvg);
+        System.out.println("Average is: " + testAvg);
+        System.out.println(" ");
 
         //7
-        int[] oddAndEvenNumbers = {1,2,4,7,9,12};
-        for (int i : oddAndEvenNumbers) {
-            System.out.println(Arrays.toString(i));
+        int size = 0;
+        int[] oddAndEvenNumbers = {1, 2, 4, 7, 9, 12};
+        for (int o : oddAndEvenNumbers) {
+            if (o%2!=0) size++;
         }
+        int oddIndex = 0;
+        int[] oddNumbers = new int[size];
+        aa:
+        for (int i : oddAndEvenNumbers) {
+            if (i%2!=0) {
+                oddNumbers[oddIndex] = i;
+                oddIndex++;
+                continue aa;
+                //aa is a label. idk why or if this is useful.
+            }
+        }
+        System.out.println(Arrays.toString(oddAndEvenNumbers));
+        System.out.println(Arrays.toString(oddNumbers));
+        // continue
+        /*
+        ##############################
+        for (int i = 0; i < 10; i++) {
+            if (i == 4) {
+                continue;
+            }
+        System.out.println(i);
+        }
+        ##############################
+        */
+
+
+        //8
+
 
 
 
