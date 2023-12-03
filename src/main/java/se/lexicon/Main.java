@@ -9,14 +9,17 @@ public class Main {
 
         //1
         int[] numbers = {11,23,39};
+        System.out.println("Printing number of Array:");
         System.out.println(Arrays.toString(numbers) + "\n");
         
         //3
+        System.out.println("Printing Cities Sorted:");
         sortingCities();
 
         //4
         int[] cloneArray = {1,15,20};
         int[] copyOfCloneArray = Arrays.copyOf(cloneArray,cloneArray.length);
+        System.out.println("Printing a copy of Array:");
         System.out.println(Arrays.toString(copyOfCloneArray) + "\n");
 
         //5
@@ -31,10 +34,12 @@ public class Main {
         countryCity[3][0] = "Australia";
         countryCity[3][1] = "Sydney";
 
+        System.out.println("Print Array using 'deepToString':");
         System.out.println(Arrays.deepToString(countryCity) + "\n");
-
+        System.out.println("Print Array using 'deepToString.replace':");
         System.out.println(Arrays.deepToString(countryCity).replace("], [", "],\n [") + "\n");
 
+        System.out.println("Print Array using 'iterator':");
         printMultiDimensionArray(countryCity);
         // Before
         /*
@@ -61,6 +66,7 @@ public class Main {
 
 
         System.out.println(" ");
+        System.out.println("Print string Array using 'iterator':");
         String[][] colorsArray = new String[4][3];
         colorsArray[0][0] = "DeepPink";
         colorsArray[0][1] = "#FF1493";
@@ -85,7 +91,7 @@ public class Main {
         printMultiDimensionArray(twoDimNumbers);
         System.out.println(" ");
 
-        System.out.println("Lambda");
+        System.out.println("Arrays using Lambda");
         Arrays.stream(numbers).forEach(System.out::print);
         System.out.println(" ");
         System.out.println(" ");
@@ -95,17 +101,18 @@ public class Main {
 
 
         //6
+        System.out.println("Average of numbers:");
         double[] bunchOfNumbers = {43,5,23,17,2,14};
         double avg = getAverage(bunchOfNumbers);
         System.out.println("Average is: " + avg);
-        System.out.println(" ");
+
 
         double[] testNumbers = {100,1000,10000};
         double testAvg = getAverage(testNumbers);
         System.out.println("Average is: " + testAvg);
         System.out.println(" ");
 
-        //7
+        //7. Print odd numbers.
         int size = 0;
         int[] oddAndEvenNumbers = {1, 2, 4, 7, 9, 12};
         for (int o : oddAndEvenNumbers) {
@@ -122,7 +129,9 @@ public class Main {
                 //aa is a label. idk why or if this is useful.
             }
         }
+        System.out.println("Print all numbers:");
         System.out.println(Arrays.toString(oddAndEvenNumbers));
+        System.out.println("Print only odd numbers:");
         System.out.println(Arrays.toString(oddNumbers));
         // continue
         /*
@@ -187,18 +196,23 @@ public class Main {
 
 
         System.out.println(" ");
+        System.out.println("Print all numbers including duplicates:");
         System.out.println("Duplicates: " + Arrays.toString(duplicates));
+        System.out.println(" ");
+        System.out.println("Print only unique numbers from above Array:");
         System.out.println("Uniques: " + Arrays.toString(uniques));
         System.out.println(" ");
 
 
 
-        //2
-        System.out.println(" ");
+        //2 Method for getting index of an Array
+        System.out.println("Methods 'indexOf' and 'ifExists':");
         int[] test = new int[] {1,6,3,4,5};
-        System.out.println("Checking for number in array");
+        System.out.println("Array " + Arrays.toString(test));
+        System.out.println("Checking Method 'indexOf' for number 3 in array:");
         System.out.println(indexOf(test,3));
         System.out.println(" ");
+        System.out.println("Checking Method 'ifExists' for number 12:");
         System.out.println(ifExists(test,12));
 
 
@@ -212,6 +226,11 @@ public class Main {
 
     }
 
+
+
+
+
+    //2 Method for getting index of an Array
     public static int indexOf (int[] array, int value) {
         for (int j = 0; j < array.length; j++) {
             if (array[j] == value) {
@@ -221,6 +240,7 @@ public class Main {
         return -1;
     }
 
+    //2 Method for getting boolean after checking if a number exists in an Array. Linear search.
     public static boolean ifExists (int[] array, int value) {
         for (int j = 0; j < array.length; j++) {
             if (array[j] == value) {
@@ -260,8 +280,5 @@ public class Main {
         Arrays.sort(cities, String.CASE_INSENSITIVE_ORDER);
         System.out.println(Arrays.asList(cities) + "\n");
     }
-
-
-    //public static String[] indexOf
-    //something.indexOf("o")
+    
 }
