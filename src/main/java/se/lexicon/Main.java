@@ -136,9 +136,60 @@ public class Main {
         ##############################
         */
 
+/*
+        //7b
+        int arrayIndex = 0;
+        int[] mixOfNumbers = {1, 2, 4, 7, 9, 12};
+        int[] mixOfNumbersCopy = Arrays.copyOf(mixOfNumbers, mixOfNumbers.length);
+        int[] mixOfNumbersCopy2 = new int[0];
+
+
+        for (int o : mixOfNumbers) {
+            if (o%2!=0) {
+                mixOfNumbersCopy[arrayIndex] = o;
+                mixOfNumbersCopy2 = Arrays.copyOf(mixOfNumbersCopy, mixOfNumbersCopy.length -1);
+                arrayIndex++;
+
+                continue;
+            }
+
+        }
+
+        System.out.println(Arrays.toString(mixOfNumbers));
+        System.out.println(Arrays.toString(mixOfNumbersCopy));
+        System.out.println(Arrays.toString(mixOfNumbersCopy2));
+
+*/
+
 
         //8
 
+        /*
+        int[] duplicates = new int[] {20,20,40,20,30,40,50,60,50};
+        int[] uniques = new int[0];
+        int counterH = 0;
+
+        for (int number : duplicates) {
+            //int findNumber = Arrays.binarySearch(duplicates,number);
+            if (number != Arrays.binarySearch(uniques,number) ) {
+                uniques[counterH] = number;
+                counterH++;
+                continue;
+            }
+
+        }
+        System.out.println();
+
+
+
+*/
+
+
+        //2
+        System.out.println(" ");
+        int[] test = new int[] {1,6,3,4,5};
+        System.out.println("Checking for number in array");
+        System.out.println(indexOf(test,7));
 
 
 
@@ -148,8 +199,16 @@ public class Main {
 
 
 
+    }
 
+    public static int indexOf (int[] array, int value) {
+        for (int j = 0; j < array.length; j++) {
+            if (array[j] == value) {
+                return j;
+            }
 
+        }
+        return -1;
 
     }
 
