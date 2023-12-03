@@ -163,33 +163,44 @@ public class Main {
 
 
         //8
-
-        /*
         int[] duplicates = new int[] {20,20,40,20,30,40,50,60,50};
         int[] uniques = new int[0];
         int counterH = 0;
 
-        for (int number : duplicates) {
-            //int findNumber = Arrays.binarySearch(duplicates,number);
-            if (number != Arrays.binarySearch(uniques,number) ) {
-                uniques[counterH] = number;
-                counterH++;
+        for (int o : duplicates) {
+            //int findNumber = Arrays.binarySearch(duplicates,o);
+            boolean check = ifExists(uniques,o);
+            if (check) {
                 continue;
             }
+            //uniques[counterH] = o;
+            int[] temp = Arrays.copyOf(uniques,uniques.length + 1);
+            temp[counterH] = o;
+            uniques = Arrays.copyOf(temp,temp.length);
+            //System.out.println(Arrays.toString(temp));
+            //System.out.println(counterH);
+            counterH++;
+            //System.out.println(o);
+            //System.out.println(Arrays.toString(uniques));
 
         }
-        System.out.println();
 
 
+        System.out.println(" ");
+        System.out.println("Duplicates: " + Arrays.toString(duplicates));
+        System.out.println("Uniques: " + Arrays.toString(uniques));
+        System.out.println(" ");
 
-*/
 
 
         //2
         System.out.println(" ");
         int[] test = new int[] {1,6,3,4,5};
         System.out.println("Checking for number in array");
-        System.out.println(indexOf(test,7));
+        System.out.println(indexOf(test,3));
+        System.out.println(" ");
+        System.out.println(ifExists(test,12));
+
 
 
 
@@ -206,10 +217,17 @@ public class Main {
             if (array[j] == value) {
                 return j;
             }
-
         }
         return -1;
+    }
 
+    public static boolean ifExists (int[] array, int value) {
+        for (int j = 0; j < array.length; j++) {
+            if (array[j] == value) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static double getAverage(double[] bunchOfNumbers) {
