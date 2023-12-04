@@ -226,10 +226,28 @@ public class Main {
         System.out.println(" ");
 
         //10. Multiplication table
-        int[][] table = {{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}};
+        int[][] table = {{1,2,3,4,5,6,7,8,9,10},{1,2,3,4,5,6,7,8,9,10,11}};
         System.out.println("Two Arrays to make Multiplication Table:");
         printMultiDimensionArray(table);
-        
+        int[][] multiplicationTable = new int[11][12];
+        //int counterTable = 0;
+        for (int t : table[0]){
+            for (int s : table[1]){
+                multiplicationTable[t][s] = t * s;
+            }
+            //System.out.println(Arrays.deepToString(table));
+            //System.out.println(counterTable);
+            //counterTable++;
+        }
+        System.out.println(" ");
+        System.out.println("Multiplication Table: ");
+        printMultiDimensionArray(multiplicationTable);
+        System.out.println(" ");
+        System.out.println(table[0].length);
+        System.out.println(table[1].length);
+       
+
+
 
 
 
