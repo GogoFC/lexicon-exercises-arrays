@@ -214,6 +214,24 @@ public class Main {
         System.out.println(" ");
         System.out.println("Checking Method 'ifExists' for number 12:");
         System.out.println(ifExists(test,12));
+        System.out.println(" ");
+
+        //9. Adding elements to an Array
+        String[] elements = new String[0];
+        elements = addToArray(elements, "Goran");
+        elements = addToArray(elements, "Dijana");
+        elements = addToArray(elements,"Zlatko");
+        System.out.println("Print adding elements to an Array:");
+        System.out.println(Arrays.asList(elements));
+        System.out.println(" ");
+
+        //10. Multiplication table
+        int[][] table = {{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}};
+        System.out.println("Two Arrays to make Multiplication Table:");
+        printMultiDimensionArray(table);
+        
+
+
 
 
 
@@ -228,7 +246,12 @@ public class Main {
 
 
 
-
+    //9 Adding elements to Array Method.
+    public static String[] addToArray(String[] source, String adding){
+        String[] tempArray = Arrays.copyOf(source,source.length +1);
+        tempArray[source.length] = adding;
+        return tempArray;
+    }
 
     //2 Method for getting index of an Array
     public static int indexOf (int[] array, int value) {
@@ -280,5 +303,5 @@ public class Main {
         Arrays.sort(cities, String.CASE_INSENSITIVE_ORDER);
         System.out.println(Arrays.asList(cities) + "\n");
     }
-    
+
 }
