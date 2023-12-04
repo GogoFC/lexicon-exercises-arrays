@@ -91,6 +91,11 @@ public class Main {
         printMultiDimensionArray(twoDimNumbers);
         System.out.println(" ");
 
+        System.out.println("Print Arrays.asList:");
+        printMultiDimMethod2(countryCity);
+
+
+        System.out.println(" ");
         System.out.println("Arrays using Lambda");
         Arrays.stream(numbers).forEach(System.out::print);
         System.out.println(" ");
@@ -245,6 +250,7 @@ public class Main {
         System.out.println(" ");
         System.out.println(table[0].length);
         System.out.println(table[1].length);
+        printMultiDimMethod2(multiplicationTable);
        
 
 
@@ -312,6 +318,17 @@ public class Main {
         Iterator<int[]> iteratorCountyCity = Arrays.asList(countryCity).iterator();
         while (iteratorCountyCity.hasNext()) {
             System.out.println(Arrays.toString(iteratorCountyCity.next()));
+        }
+    }
+
+    private static void printMultiDimMethod2(String[][] countryCity) {
+        for (String[] array : countryCity) {
+            System.out.println(Arrays.asList(array));
+        }
+    }
+    private static void printMultiDimMethod2(int[][] countryCity) {
+        for (int[] array : countryCity) {
+            System.out.println(Arrays.toString(array));
         }
     }
 
