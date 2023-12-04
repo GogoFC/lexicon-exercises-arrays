@@ -231,11 +231,18 @@ public class Main {
         System.out.println(" ");
 
         //10. Multiplication table
-        int[][] table = {{1,2,3,4,5,6,7,8,9,10},{1,2,3,4,5,6,7,8,9,10,11}};
+        //int[][] table = {{1,2,3,4,5,6,7,8,9,10},{1,2,3,4,5,6,7,8,9,10}};
         System.out.println("Two Arrays to make Multiplication Table:");
-        printMultiDimensionArray(table);
-        int[][] multiplicationTable = new int[11][12];
+        //printMultiDimensionArray(table);
+        int[][] multiplicationTable = new int[10][10];
         //int counterTable = 0;
+        for (int t = 0; t < multiplicationTable[0].length; t++){
+            for (int s = 0; s < multiplicationTable[1].length; s++){
+                multiplicationTable[t][s] = (t+1) * (s+1);
+            }
+        }
+        /* Didn't work. Added unwanted zeroes. Not even with (t+1)*(s+1), but it works in loop above.
+        Also removed table[][] because the above loop just uses integers and not values from the 'table' Array.
         for (int t : table[0]){
             for (int s : table[1]){
                 multiplicationTable[t][s] = t * s;
@@ -244,12 +251,13 @@ public class Main {
             //System.out.println(counterTable);
             //counterTable++;
         }
+        */
         System.out.println(" ");
         System.out.println("Multiplication Table: ");
         printMultiDimensionArray(multiplicationTable);
         System.out.println(" ");
-        System.out.println(table[0].length);
-        System.out.println(table[1].length);
+        //System.out.println(table[0].length);
+        //System.out.println(table[1].length);
         printMultiDimMethod2(multiplicationTable);
        
 
